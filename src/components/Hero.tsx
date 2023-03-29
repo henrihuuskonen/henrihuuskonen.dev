@@ -1,5 +1,5 @@
 import Particles from "react-tsparticles";
-import {Button, Container, Link, Spacer, Text, useTheme} from "@nextui-org/react";
+import {Container, Text, useTheme} from "@nextui-org/react";
 import React, {useCallback, useEffect, useState} from "react";
 import {Engine} from "tsparticles-engine";
 import {loadFull} from "tsparticles";

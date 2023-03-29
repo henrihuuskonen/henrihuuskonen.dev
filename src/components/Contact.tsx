@@ -1,6 +1,5 @@
-import {Button, Card, Container, Input, Link, Spacer, Text, Textarea, useInput, Image} from "@nextui-org/react";
+import {Button, Card, Container, Input, Spacer, Text, Textarea, useInput} from "@nextui-org/react";
 import React from "react";
-import Tilt from 'react-parallax-tilt';
 import Socials from "@/components/Socials";
 
 type Color = "default" | "primary" | "secondary" | "success" | "warning" | "error"

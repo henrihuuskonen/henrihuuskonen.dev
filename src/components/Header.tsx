@@ -1,4 +1,4 @@
-import {Avatar, Button, Link, Navbar, Text, useTheme, Switch, Spacer} from "@nextui-org/react";
+import {Avatar, Button, Link, Navbar, Spacer, Switch, Text, useTheme} from "@nextui-org/react";
 import React from "react";
 import {useTheme as useNextTheme} from "next-themes";
 import {SunIcon} from "@/components/SunIcon";

@@ -1,6 +1,6 @@
 import {Image, Link} from "@nextui-org/react";
 import Tilt from "react-parallax-tilt";
-import React, {CSSProperties, useEffect} from "react";
+import React, {useEffect} from "react";
 import {useMediaQuery} from 'react-responsive'
 
 interface TiltingImageLinkProps {
