@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@nextui-org/react": "^1.0.0-beta.12",
@@ -27,6 +28,8 @@
     "typescript": "5.0.2"
   },
   "devDependencies": {
-    "babel-plugin-styled-components": "^2.0.7"
+    "babel-plugin-styled-components": "^2.0.7",
+    "eslint-config-prettier": "^8.8.0",
+    "husky": "^8.0.3"
   }
 }
