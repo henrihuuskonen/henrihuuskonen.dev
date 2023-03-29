@@ -15,6 +15,10 @@ class MyDocument extends Document {
         return (
             <Html lang="en">
                 <Head title="Henri Huuskonen">
+                    <meta
+                        name="description"
+                        content="A full-stack software developer from Finland."
+                    />
                     <link rel="shortcut icon" href="favicon.ico" />
                     {CssBaseline.flush()}
                 </Head>

@@ -5,10 +5,14 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import Head from "next/head";
 
 const Home = () => {
     return (
         <Layout>
+            <Head>
+                <title>Henri Huuskonen</title>
+            </Head>
             <Header/>
             <Hero/>
             <Spacer y={10}/>
