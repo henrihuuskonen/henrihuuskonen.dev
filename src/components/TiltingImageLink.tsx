@@ -1,7 +1,6 @@
 import {Image, Link} from "@nextui-org/react";
 import Tilt from "react-parallax-tilt";
 import React, {useEffect} from "react";
-import {useMediaQuery} from 'react-responsive'
 
 interface TiltingImageLinkProps {
     href: string
@@ -10,13 +9,6 @@ interface TiltingImageLinkProps {
 }
 
 const TiltingImageLink = ({href, src, alt}: TiltingImageLinkProps) => {
-    const isTabletOrMobile = useMediaQuery({maxWidth: 425})
-
-    useEffect(() => {
-        console.log(isTabletOrMobile)
-    }, [isTabletOrMobile])
-
-
     return (
         <Tilt scale={0.95}>
             <Link href={href} target="_blank" rel="noopener noreferrer">
