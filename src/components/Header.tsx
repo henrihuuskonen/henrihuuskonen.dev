@@ -8,7 +8,7 @@ const Header = () => {
     const {setTheme} = useNextTheme();
     const {isDark, type} = useTheme();
 
-    return <Navbar isBordered variant="sticky">
+    return <Navbar isBordered variant="sticky" maxWidth="xl">
         <Navbar.Brand>
             <Avatar
                 size="md"
