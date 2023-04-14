@@ -2,6 +2,7 @@ import '@/styles/globals.css'
 import type {AppProps} from 'next/app'
 import {createTheme, NextUIProvider} from "@nextui-org/react";
 import {ThemeProvider as NextThemesProvider} from 'next-themes';
+import { Analytics } from '@vercel/analytics/react';
 
 const lightTheme = createTheme({
     type: 'light',
@@ -23,7 +24,12 @@ const App = ({Component, pageProps}: AppProps) => {
             light: lightTheme.className,
             dark: darkTheme.className
         }}
-    ><NextUIProvider><Component {...pageProps} /></NextUIProvider></NextThemesProvider>
+    ><NextUIProvider>
+        <Component {...pageProps} />
+        <
+            Analytics
+        />
+    </NextUIProvider></NextThemesProvider>
 }
 
 export default App
