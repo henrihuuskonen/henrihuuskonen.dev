@@ -17,7 +17,7 @@ class MyDocument extends Document {
                 <Head title="Henri Huuskonen">
                     <meta
                         name="description"
-                        content="A full-stack software developer from Finland."
+                        content="Henri Huuskonen, a full-stack software developer from Finland."
                     />
                     <link rel="shortcut icon" href="favicon.ico" />
                     {CssBaseline.flush()}
