@@ -1,6 +1,8 @@
 import React from 'react';
 import Document, {Html, Head, Main, NextScript, DocumentContext} from 'next/document';
 import { CssBaseline } from '@nextui-org/react';
+import { getInitColorSchemeScript } from '@mui/material';
+import type {} from '@mui/material/themeCssVarsAugmentation';
 
 class MyDocument extends Document {
     static async getInitialProps(ctx: DocumentContext) {
@@ -23,6 +25,7 @@ class MyDocument extends Document {
                     {CssBaseline.flush()}
                 </Head>
                 <body>
+                {getInitColorSchemeScript()}
                 <Main />
                 <NextScript />
                 </body>
