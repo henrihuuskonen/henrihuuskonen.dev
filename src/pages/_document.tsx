@@ -1,6 +1,5 @@
 import React from 'react';
 import Document, {Html, Head, Main, NextScript, DocumentContext} from 'next/document';
-import { CssBaseline } from '@nextui-org/react';
 
 class MyDocument extends Document {
     static async getInitialProps(ctx: DocumentContext) {
@@ -20,7 +19,6 @@ class MyDocument extends Document {
                         content="Henri Huuskonen, a full-stack software developer from Finland."
                     />
                     <link rel="shortcut icon" href="favicon.ico" />
-                    {CssBaseline.flush()}
                 </Head>
                 <body>
                 <Main />
