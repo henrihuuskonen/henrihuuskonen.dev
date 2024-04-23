@@ -6,12 +6,14 @@ import InlineMenu from "@/components/InlineMenu";
 import Projects from "@/components/Projects";
 import Background from "@/components/Background";
 import TextSection from "@/components/TextSection";
+import Footer from "@/components/Footer";
 
 const Home = () => {
     return (
         <div>
             <Head>
                 <title>Henri Huuskonen</title>
+                <meta name="viewport" content="width=device-width, initial-scale=1"/>
             </Head>
             <div className={styles.initial__container}>
                 <Background/>
@@ -48,7 +50,7 @@ const Home = () => {
                         section 1.10.32.`}
                          titleOnRight
             />
-
+            <Footer/>
         </div>
     )
 }
