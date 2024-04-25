@@ -18,7 +18,7 @@ const InlineMenu = () => {
         <div className={styles.menu__buttons}>
             <MenuItem text="Work" href="/"/>
             <MenuItem text="Projects" href="/"/>
-            <MenuItem text="Blog" href="/"/>
+            <MenuItem text="Blog" href="https://blog.henrihuuskonen.dev/"/>
             <MenuItem text="Contact" href="/"/>
         </div>
     </div>

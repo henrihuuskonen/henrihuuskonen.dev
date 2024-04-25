@@ -9,14 +9,11 @@ const Hero = () => {
             className={styles.avatar__container}>
             <div className={styles.image__container}>
                 <Image
-                    src="/henrihuuskonen-circle.png"
-                    width={500}
-                    height={500}
+                    src="/avatar-with-name.svg"
+                    fill
                     alt="Picture of the author"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
-                <div className={styles.name__container}>
-                    <h1 className={styles.name}>Henri Huuskonen</h1>
-                </div>
             </div>
         </div>
     )
