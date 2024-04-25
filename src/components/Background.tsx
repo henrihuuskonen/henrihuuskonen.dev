@@ -35,6 +35,8 @@ const Background = () => {
             }}
             init={particlesInit}
             loaded={particlesLoaded}
+            // TODO: Fix the types
+            // @ts-ignore
             options={AVATAR_OPTIONS}
         />}
     </>
