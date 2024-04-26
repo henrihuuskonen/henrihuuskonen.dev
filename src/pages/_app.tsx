@@ -5,7 +5,7 @@ import {Analytics} from '@vercel/analytics/react';
 
 const App = ({Component, pageProps}: AppProps) => {
     return <NextThemesProvider
-        defaultTheme="system"
+        defaultTheme="dark"
         attribute="class"
     >
         <Component {...pageProps} />
