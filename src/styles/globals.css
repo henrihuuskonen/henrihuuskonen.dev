@@ -17,6 +17,7 @@ button {
     --breakpoint-small-mobile: 319px;
     --breakpoint-mobile: 339px;
     --breakpoint-tablet: 479px;
+    --breakpoint-large-tablet: 672px;
     --breakpoint-desktop: 769px;
     --breakpoint-large-desktop: 1024px;
     --breakpoint-extra-large-desktop: 1201px;

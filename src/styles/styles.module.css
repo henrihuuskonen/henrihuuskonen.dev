@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     height: 100vh;
-    max-height: 800px;
+    max-height: 700px;
     position: relative;
 }
 
@@ -72,6 +72,7 @@
     display: flex;
     align-content: center;
     position: relative;
+    padding:  0 5rem;
 }
 
 .menu {
@@ -89,7 +90,7 @@
     align-items: center;
 }
 
-@media (min-width: 479px) {
+@media (min-width: 672px) {
     .menu__buttons {
         display: flex;
         flex-direction: row;
@@ -172,5 +173,6 @@
 }
 
 .footer__container {
+    padding: 5rem 0;
     text-align: center;
 }

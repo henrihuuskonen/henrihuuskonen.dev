@@ -20,7 +20,7 @@ const Home = () => {
                 <Hero/>
                 <InlineMenu/>
             </div>
-            <TextSection title="Software engineer, tinkerer" text={`Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece
+            <TextSection title="Software engineer" text={`Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece
                         of
                         classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a
                         Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure
@@ -35,7 +35,7 @@ const Home = () => {
                         section 1.10.32.`}
             />
             {/*<Projects/>*/}
-            <TextSection title="Software engineer, tinkerer" text={`Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece
+            <TextSection title="Tinkerer" text={`Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece
                         of
                         classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a
                         Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure
