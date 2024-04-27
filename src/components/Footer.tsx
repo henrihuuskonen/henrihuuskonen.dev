@@ -1,14 +1,11 @@
-import {Container, Text} from "@nextui-org/react";
-import React from "react";
+import styles from '../styles/styles.module.css'
 
 const Footer = () => {
     return (
-        <Container fluid justify="center" css={{}}>
-            <Text h6 css={{
-                textAlign: "center"
-            }}>Created by Henri Huuskonen</Text>
-        </Container>
+        <div className={styles.footer__container}>
+            <p>Created by Henri Huuskonen</p>
+        </div>
     )
 }
 
-export default Footer
+export  default Footer

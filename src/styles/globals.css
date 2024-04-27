@@ -1,0 +1,37 @@
+body {
+    font-family: "Space Mono", monospace;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    background-color: transparent;
+}
+
+:root {
+    /* Colors */
+    /* https://testsigma.com/blog/css-breakpoints/ */
+    --breakpoint-small-mobile: 319px;
+    --breakpoint-mobile: 339px;
+    --breakpoint-tablet: 479px;
+    --breakpoint-large-tablet: 672px;
+    --breakpoint-desktop: 769px;
+    --breakpoint-large-desktop: 1024px;
+    --breakpoint-extra-large-desktop: 1201px;
+    /* Font sizes */
+    --font-size-xxs: 8px;
+    --font-size-xs: 10px;
+    --font-size-sm: 12px;
+    --font-size-md: 16px;
+    --font-size-lg: 24px;
+    --font-size-xl: 32px;
+    --font-size-xxl: 48px;
+    --font-size-xxxl: 64px;
+    --font-size-xxxxl: 72px;
+    /*  Transition speeds */
+    --transition-speed: .3s;
+    --transition-speed-slow: 1s;
+}
