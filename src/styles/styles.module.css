@@ -72,7 +72,12 @@
     display: flex;
     align-content: center;
     position: relative;
-    padding:  0 5rem;
+}
+
+@media (min-width: 479px) {
+    .avatar__container {
+        padding:  0 5rem;
+    }
 }
 
 .menu {
