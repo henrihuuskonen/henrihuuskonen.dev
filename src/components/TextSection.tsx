@@ -9,7 +9,7 @@ interface TextSectionProps {
 const TextSection = ({ title, text, titleOnRight }: TextSectionProps) => {
     const TitleContainer = () => (
         <div className={styles.frontpage__description__container__left}>
-            <p>{title}</p>
+            <h3>{title}</h3>
         </div>
     )
 

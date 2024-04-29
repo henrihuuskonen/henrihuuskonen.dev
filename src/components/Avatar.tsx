@@ -9,7 +9,7 @@ const Hero = () => {
             className={styles.avatar__container}>
             <div className={styles.image__container}>
                 <Image
-                    src="/avatar-with-name.svg"
+                    src="/henri-huuskonen-avatar.svg"
                     fill
                     alt="Picture of the author"
                     priority={true}
