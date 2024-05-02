@@ -6,31 +6,39 @@ interface TextSectionProps {
     titleOnRight?: boolean
 }
 
+interface TitleContainerProps {
+    title: string
+}
+
+export const TitleContainer = ({title}: TitleContainerProps) => (
+    <div className={styles.frontpage__description__container__left}>
+        <h2>{title}</h2>
+    </div>
+)
+
+interface ParagraphContainerProps {
+    text: string
+
+}
+
+export const ParagraphContainer = ({text}: ParagraphContainerProps) => (
+    <div className={styles.frontpage__description__container__right}>
+        <p>{text}</p>
+    </div>
+)
+
 const TextSection = ({ title, text, titleOnRight }: TextSectionProps) => {
-    const TitleContainer = () => (
-        <div className={styles.frontpage__description__container__left}>
-            <h3>{title}</h3>
-        </div>
-    )
-
-    const ParagraphContainer = () => (
-        <div className={styles.frontpage__description__container__right}>
-            <p>{text}</p>
-        </div>
-    )
-
-
     return (
         <div className={styles.frontpage__description__container}>
             {titleOnRight ? (
                 <>
-                    <ParagraphContainer/>
-                    <TitleContainer/>
+                    <ParagraphContainer text={text}/>
+                    <TitleContainer title={title}/>
                 </>
             ) : (
                 <>
-                    <TitleContainer/>
-                    <ParagraphContainer/>
+                    <TitleContainer title={title}/>
+                    <ParagraphContainer text={text}/>
                 </>
             )}
         </div>

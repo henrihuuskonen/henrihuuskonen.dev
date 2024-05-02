@@ -135,9 +135,13 @@
 }
 
 .frontpage__description__container__left {
-    font-size: var(--font-size-xxl);
     height: 100%;
     width: 100%;
+    margin: auto;
+}
+
+.frontpage__description__container__left > h2 {
+    font-size: var(--font-size-xxxl);
     text-align: center;
     text-transform: uppercase;
     font-weight: bold;
@@ -150,17 +154,17 @@
 }
 
 .frontpage__description__container__right {
-    padding: 0 3rem;
+    padding: 3rem;
     font-size: var(--font-size-md);
     margin: auto;
     height: 100%;
-
+    text-align: justify;
 }
 
 @media (min-width: 769px) {
     .frontpage__description__container__right {
         font-size: 1rem;
-        width: 100%;
+        padding: 0 3rem;
     }
 }
 
@@ -191,4 +195,9 @@
     .layout {
         max-width: 1024px;
     }
+}
+
+.title {
+    padding: 5rem 0;
+    text-align: center;
 }
