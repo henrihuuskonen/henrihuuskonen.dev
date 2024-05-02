@@ -181,3 +181,14 @@
     padding: 5rem 0;
     text-align: center;
 }
+
+.layout {
+    max-width: 100%;
+    margin: auto;
+}
+
+@media (min-width: 1024px) {
+    .layout {
+        max-width: 1024px;
+    }
+}

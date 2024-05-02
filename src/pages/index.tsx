@@ -3,15 +3,15 @@ import Head from "next/head";
 import styles from "../styles/styles.module.css";
 import Hero from "@/components/Avatar";
 import InlineMenu from "@/components/InlineMenu";
-import Projects from "@/components/Projects";
 import Background from "@/components/Background";
 import TextSection from "@/components/TextSection";
 import Footer from "@/components/Footer";
 import {META_DESCRIPTION} from "@/content";
+import Layout from "@/components/Layout";
 
 const Home = () => {
     return (
-        <div>
+        <Layout>
             <Head>
                 <title>Henri Huuskonen - Software Engineer</title>
                 <meta property="og:title" content="Henri Huuskonen - Software Engineer"/>
@@ -48,7 +48,7 @@ I still enjoy creating things with my hands now, outside of work, and I've been 
                          titleOnRight
             />
             <Footer/>
-        </div>
+        </Layout>
     )
 }
 
