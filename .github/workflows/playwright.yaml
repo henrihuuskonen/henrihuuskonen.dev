@@ -33,7 +33,7 @@ jobs:
 
       - name: Run Playwright tests
         id: run-tests
-        run: npm run test
+        run: npm run test:ci
 
       - name: Upload Playwright report
         uses: actions/upload-artifact@v3

@@ -7,7 +7,7 @@ test('verify title', async ({ page }) => {
     await expect(page).toHaveTitle(/Henri Huuskonen - Software Engineer/);
 });
 
-test("regression test", async ({ page }) => {
+test("regression test", {tag: "@ci"}, async ({ page }) => {
     await page.goto(BASE_URL);
 
     // Remove the particles.js canvas element from the DOM
