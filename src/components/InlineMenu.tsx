@@ -6,11 +6,9 @@ interface MenuItemProps {
 }
 
 const MenuItem = ({text, href}: MenuItemProps) => {
-    return <button className={styles.menu__item}>
-        <a className={styles.menu__item__text} href={href} target="_blank">
-            {text}
-        </a>
-    </button>
+    return <a className={styles.menu__item} href={href} target="_blank">
+        <span className={styles.menu__item__text}>{text}</span>
+    </a>
 }
 
 const InlineMenu = () => {
