@@ -39,7 +39,7 @@ const Home = () => {
                 <Hero/>
                 <InlineMenu/>
             </div>
-            <div className={styles.title}>
+            <div className={styles.title__container}>
                 <h1>Hey there, my name is Henri Huuskonen.</h1>
             </div>
             <TextSection title="Software engineer"
