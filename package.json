@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky install",
-    "postbuild": "next-sitemap"
+    "postbuild": "next-sitemap",
+    "test": "playwright test"
   },
   "dependencies": {
     "@react-spring/web": "9.7.1",
@@ -29,6 +30,7 @@
     "typescript": "5.0.2"
   },
   "devDependencies": {
+    "@playwright/test": "^1.43.1",
     "babel-plugin-styled-components": "2.0.7",
     "eslint-config-prettier": "8.8.0",
     "husky": "8.0.3"
