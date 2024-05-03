@@ -10,7 +10,7 @@
     "prepare": "husky install",
     "postbuild": "next-sitemap",
     "test": "playwright test",
-    "test:update-screenshots": "playwright test --update-screenshots"
+    "test:update-snapshots": "playwright test --update-snapshots"
   },
   "dependencies": {
     "@react-spring/web": "9.7.1",
