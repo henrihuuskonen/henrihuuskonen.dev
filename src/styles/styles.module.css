@@ -1,48 +1,16 @@
-.initial__container {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    max-height: 700px;
-    position: relative;
-}
-
 .hero__container {
-    position: relative;
     display: flex;
     flex-direction: column;
-    flex: 50%;
-}
-
-
-.name {
-    line-height: 2rem;
-    margin: 0;
-    color: #fff;
-    font-size: var(--font-size-xxl);
-    font-weight: bold;
-    text-shadow: #000 1px 0 10px;
-}
-
-@media (min-width: 479px) {
-    .name {
-        line-height: 5rem;
-        font-size: 5rem;
-    }
+    max-height: 900px;
+    height: 100vh;
+    position: relative;
+    box-shadow: 0 0 50px 50px #131313 inset;
 }
 
 @media (min-width: 769px) {
-    .name {
-        line-height: 5rem;
-        font-size: 7rem;
+    .hero__container {
+        height: 100%;
     }
-}
-
-
-.name__container {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
 }
 
 .image__container {
@@ -53,7 +21,6 @@
     height: 300px;
     align-items: center;
 }
-
 
 
 @media (min-width: 339px) {
@@ -76,7 +43,7 @@
 
 @media (min-width: 479px) {
     .avatar__container {
-        padding:  0 5rem;
+        padding: 0 5rem;
     }
 }
 
@@ -134,13 +101,13 @@
     }
 }
 
-.frontpage__description__container__left {
+.text_section__heading {
     height: 100%;
     width: 100%;
     margin: auto;
 }
 
-.frontpage__description__container__left > h2 {
+.text_section__heading > h2 {
     font-size: var(--font-size-xxxl);
     text-align: center;
     text-transform: uppercase;
@@ -148,12 +115,13 @@
 }
 
 @media (min-width: 769px) {
-    .frontpage__description__container__left {
+    .text_section__heading {
         font-size: 5rem;
+        padding: 0 0 0 3rem;
     }
 }
 
-.frontpage__description__container__right {
+.text_section__paragraph {
     padding: 3rem;
     font-size: var(--font-size-md);
     margin: auto;
@@ -162,12 +130,11 @@
 }
 
 @media (min-width: 769px) {
-    .frontpage__description__container__right {
+    .text_section__paragraph {
         font-size: 1rem;
         padding: 0 3rem;
     }
 }
-
 
 
 .project__container {
@@ -197,7 +164,7 @@
     }
 }
 
-.title {
-    padding: 5rem 0;
+.title__container {
+    padding: 3rem 0;
     text-align: center;
 }
