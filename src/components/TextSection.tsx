@@ -11,7 +11,7 @@ interface TitleContainerProps {
 }
 
 export const TitleContainer = ({title}: TitleContainerProps) => (
-    <div className={styles.frontpage__description__container__left}>
+    <div className={styles.text_section__heading}>
         <h2>{title}</h2>
     </div>
 )
@@ -22,7 +22,7 @@ interface ParagraphContainerProps {
 }
 
 export const ParagraphContainer = ({text}: ParagraphContainerProps) => (
-    <div className={styles.frontpage__description__container__right}>
+    <div className={styles.text_section__paragraph}>
         <p>{text}</p>
     </div>
 )

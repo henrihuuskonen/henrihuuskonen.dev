@@ -34,7 +34,7 @@ const Home = () => {
                     key="canonical"
                 />
             </Head>
-            <div className={styles.initial__container}>
+            <div className={styles.hero__container}>
                 <Background/>
                 <Hero/>
                 <InlineMenu/>
