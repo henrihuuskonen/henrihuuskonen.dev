@@ -1,4 +1,4 @@
-import {BACKGROUND_Z_INDEX} from "@/constants";
+import {BACKGROUND_Z_INDEX} from "@/constants"
 
 export const AVATAR_OPTIONS = {
     "autoPlay": true,

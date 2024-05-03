@@ -1,5 +1,5 @@
-import {ReactElement} from "react";
-import styles from "../styles/styles.module.css";
+import {ReactElement} from "react"
+import styles from "../styles/styles.module.css"
 
 interface LayoutProps {
     children: ReactElement | ReactElement[]

@@ -1,11 +1,11 @@
 import '@/styles/globals.css'
 import type {AppProps} from 'next/app'
-import {ThemeProvider as NextThemesProvider} from 'next-themes';
-import {Analytics} from '@vercel/analytics/react';
-import React from "react";
-import {SpeedInsights} from "@vercel/speed-insights/next";
-import {META_DESCRIPTION} from "@/content";
-import Head from "next/head";
+import {ThemeProvider as NextThemesProvider} from 'next-themes'
+import {Analytics} from '@vercel/analytics/react'
+import React from "react"
+import {SpeedInsights} from "@vercel/speed-insights/next"
+import {META_DESCRIPTION} from "@/content"
+import Head from "next/head"
 
 const App = ({Component, pageProps}: AppProps) => {
     return <NextThemesProvider

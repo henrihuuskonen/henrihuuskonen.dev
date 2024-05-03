@@ -1,13 +1,13 @@
-import React from "react";
-import Head from "next/head";
-import styles from "../styles/styles.module.css";
-import Hero from "@/components/Avatar";
-import InlineMenu from "@/components/InlineMenu";
-import Background from "@/components/Background";
-import TextSection from "@/components/TextSection";
-import Footer from "@/components/Footer";
-import {TEXT_SECTION_SOFTWARE_DEVELOPER, TEXT_SECTION_TINKERER} from "@/content";
-import Layout from "@/components/Layout";
+import React from "react"
+import Head from "next/head"
+import styles from "../styles/styles.module.css"
+import Hero from "@/components/Avatar"
+import InlineMenu from "@/components/InlineMenu"
+import Background from "@/components/Background"
+import TextSection from "@/components/TextSection"
+import Footer from "@/components/Footer"
+import {TEXT_SECTION_SOFTWARE_DEVELOPER, TEXT_SECTION_TINKERER} from "@/content"
+import Layout from "@/components/Layout"
 
 const Home = () => {
     return (
