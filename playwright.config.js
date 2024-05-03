@@ -11,6 +11,7 @@ import { defineConfig, devices } from '@playwright/test'
  */
 export default defineConfig({
     testDir: './e2e',
+    snapshotPathTemplate: '{testDir}/__screenshots__/{testFilePath}/{projectName}/{arg}{ext}',
     /* Run tests in files in parallel */
     fullyParallel: true,
     /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -50,7 +51,7 @@ export default defineConfig({
     ],
 
     webServer: {
-        command: 'npm run start',
+        command: process.env.GITHUB_ACTIONS ? 'npm run start' : 'npm run dev',
         url: 'http://127.0.0.1:3000',
         /*
         If true, it will re-use an existing server on the port or url when available.
