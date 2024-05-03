@@ -50,7 +50,7 @@ export default defineConfig({
     ],
 
     webServer: {
-        command: 'npm run start',
+        command: process.env.GITHUB_ACTIONS ? 'npm run start' : 'npm run dev',
         url: 'http://127.0.0.1:3000',
         /*
         If true, it will re-use an existing server on the port or url when available.
