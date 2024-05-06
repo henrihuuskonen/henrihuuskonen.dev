@@ -3,7 +3,7 @@
 
 version: 2
 updates:
-  - package-ecosystem: "pip"
+  - package-ecosystem: "npm"
     directory: "/"
     schedule:
       interval: "daily"
@@ -13,6 +13,3 @@ updates:
     #  Always increase the minimum version requirement to match the new version.
     #  If a range already exists, typically this only increases the lower bound.
     versioning-strategy: increase
-    ignore:
-      # This is already being updated by the update-python.yml Github action
-      - dependency-name: "python"
