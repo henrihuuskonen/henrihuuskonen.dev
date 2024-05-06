@@ -1,7 +1,11 @@
 name: CI checks
 
 on:
-  push
+  - push
+  - pull_request
+permissions:
+  pull-requests: write
+  contents: write
 
 jobs:
   lint:
