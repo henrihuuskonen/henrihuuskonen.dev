@@ -2,7 +2,6 @@ name: CI checks
 
 on:
   - push
-  - pull_request
 permissions:
   pull-requests: write
   contents: write
@@ -74,7 +73,8 @@ jobs:
           retention-days: 3
   dependabot-auto-approve-and-merge:
     runs-on: ubuntu-latest
-    if: github.actor == 'dependabot[bot]'
+    if: github.actor == 'dependabot[bot]' && github.event_name == 'pull_request'
+
     needs:
       - playwright-tests
       - lint
