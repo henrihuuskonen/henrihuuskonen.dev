@@ -71,7 +71,7 @@ npx playwright install
 npm run test
 ```
 
-The frontend is "protected" with visual regression testing, which are run in CI under [playwright job](https://github.com/henrihuuskonen/henrihuuskonen.dev/blob/main/.github/workflows/playwright.yaml).
+The frontend is "protected" with visual regression testing, which are run in CI under [playwright-tests step](https://github.com/henrihuuskonen/henrihuuskonen.dev/blob/main/.github/workflows/ci.yaml#L21).
 
 If the job fails on the visual regression test, updated snapshots are saved under the jobs artifacts for easy updating.
 
