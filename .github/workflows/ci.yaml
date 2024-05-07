@@ -93,6 +93,7 @@ jobs:
       - playwright-tests
       - lint
     steps:
+      - uses: actions/checkout@v4
       - name: Run dependabot workflow
         id: metadata
         uses: ./.github/workflows/dependabot.yaml
