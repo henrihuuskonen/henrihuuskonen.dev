@@ -84,10 +84,3 @@ jobs:
           name: playwright-screenshots-updated
           path: e2e/__screenshots__/**/*.png
           retention-days: 3
-
-  dependabot-auto-approve-and-merge:
-    if: github.actor == 'dependabot[bot]'
-    needs:
-      - playwright-tests
-      - lint
-    uses: ./.github/workflows/dependabot.yaml
