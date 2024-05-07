@@ -85,6 +85,14 @@ jobs:
           path: e2e/__screenshots__/**/*.png
           retention-days: 3
 
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
+
   dependabot-auto-approve-and-merge:
     runs-on: ubuntu-latest
     if: github.actor == 'dependabot[bot]' && github.event_name == 'pull_request'
