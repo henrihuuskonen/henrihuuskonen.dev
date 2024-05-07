@@ -86,14 +86,8 @@ jobs:
           retention-days: 3
 
   dependabot-auto-approve-and-merge:
-    runs-on: ubuntu-latest
     if: github.actor == 'dependabot[bot]'
-
     needs:
       - playwright-tests
       - lint
-    steps:
-      - uses: actions/checkout@v4
-      - name: Run dependabot workflow
-        id: metadata
-        uses: ./.github/workflows/dependabot.yaml
+    uses: ./.github/workflows/dependabot.yaml
