@@ -90,7 +90,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Get Pull Request Number
-        run: echo "::set-output name=pull_request_number::$(gh pr view --json number -q .number || echo "")"
+        run: echo "{pull_request_number}=$(gh pr view --json number -q .number || echo "")" >> $GITHUB_OUTPUT
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Approve and Merge PR
