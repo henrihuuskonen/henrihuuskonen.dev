@@ -90,6 +90,9 @@ jobs:
   dependabot-auto-approve-and-merge:
     runs-on: ubuntu-latest
     if: github.actor == 'dependabot[bot]'
+    needs:
+      - playwright-tests
+      - lint
     steps:
       - uses: actions/checkout@v4
       - uses: actions/github-script@v7
