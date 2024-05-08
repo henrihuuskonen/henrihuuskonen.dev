@@ -110,4 +110,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          bash .github/approve-and-merge.sh $GITHUB_TOKEN ${{ steps.pr_data.outputs.pull_request_number }}
+          bash .github/approve-and-merge.sh ${{ steps.pr_data.outputs.pull_request_number }}
