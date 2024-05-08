@@ -89,6 +89,8 @@ jobs:
     if: github.actor == 'dependabot[bot]'
     steps:
       - uses: actions/checkout@v4
+      - name: test
+        run: gh pr view --json number -q .number || echo ""
       - name: Get Pull Request Number
         run: echo "{pull_request_number}=$(gh pr view --json number -q .number || echo "")" >> $GITHUB_OUTPUT
         env:
