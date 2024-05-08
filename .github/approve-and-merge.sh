@@ -1,22 +1,27 @@
 #!/bin/bash
 
-GITHUB_TOKEN=$1
-REPO_OWNER=$2
-REPO_NAME=$3
-PR_NUMBER=$4
+PR_NUMBER=$1
 
-pr_status=$(gh pr status $PR_NUMBER --json status)
+# Fetch the JSON data using 'gh pr view' command
+json_data=$(gh pr view $PR_NUMBER --json statusCheckRollup,mergeable)
 
-if [[ "$pr_status" == *"OPEN"* ]]; then
-    # Check if every other check has passed
-    checks_passed=$(gh pr checks $PR_NUMBER --json check_runs[].conclusion --jq 'map(select(. != "neutral" and . != "cancelled" and . != "skipped" and . != null)) | length')
+# Check if the command was successful
+if [ $? -ne 0 ]; then
+    echo "Error fetching PR data"
+    exit 1
+fi
 
-    if [[ "$checks_passed" -gt 0 ]]; then
-        gh pr review $PR_NUMBER --approve --json
-        gh pr merge $PR_NUMBER --merge --json
-    else
-        echo "Not all checks have passed. Cannot approve and merge the pull request."
-    fi
+# Extract the "conclusion" fields from the JSON data
+conclusions=$(echo "$json_data" | jq -r '.statusCheckRollup[].conclusion')
+mergeable=$(echo "$json_data" | jq -r '.mergeable')
+
+# Check if all conclusions are "SUCCESS"
+if [[ $(echo "$conclusions" | grep -c "SUCCESS") -eq $(echo "$conclusions" | wc -l) && "$mergeable" == "MERGEABLE" ]]; then
+    echo "All conclusions are SUCCESS and PR is MERGEABLE"
+    gh pr review $PR_NUMBER --approve
+    gh pr merge $PR_NUMBER --squash
+    exit 0
 else
-    echo "The pull request is not open. Skipping the approval and merge process."
+    echo "Some conclusions are not SUCCESS or not MERGEABLE"
+    exit 1
 fi

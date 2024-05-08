@@ -84,3 +84,17 @@ jobs:
           name: playwright-screenshots-updated
           path: e2e/__screenshots__/**/*.png
           retention-days: 3
+  dependabot-auto-approve-and-merge:
+    runs-on: ubuntu-latest
+    if: github.actor == 'dependabot[bot]'
+    steps:
+      - uses: actions/checkout@v4
+      - name: Get Pull Request Number
+        run: echo "::set-output name=pull_request_number::$(gh pr view --json number -q .number || echo "")"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Approve and Merge PR
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          bash .github/approve-and-merge.sh $GITHUB_TOKEN ${{ steps.pr.outputs.pull_request_number }}
