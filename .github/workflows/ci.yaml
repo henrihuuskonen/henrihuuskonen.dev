@@ -86,15 +86,11 @@ jobs:
           retention-days: 3
   dependabot-auto-approve-and-merge:
     runs-on: ubuntu-latest
-    # if: github.actor == 'dependabot[bot]'
+    if: github.actor == 'dependabot[bot]'
     steps:
       - uses: actions/checkout@v4
-      - name: test
-        run: gh pr view --json number -q .number || echo ""
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Get Pull Request Number
-        run: echo "{pull_request_number}=$(gh pr view --json number -q .number || echo "")" >> $GITHUB_OUTPUT
+        run: echo "{pull_request_number}=$(echo "${{ github.event.head_commit.message }}" | awk -F"[\#)]" '{print $2}')" >> $GITHUB_OUTPUT
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Approve and Merge PR
