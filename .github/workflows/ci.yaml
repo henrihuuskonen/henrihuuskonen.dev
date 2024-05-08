@@ -7,6 +7,7 @@ permissions:
   contents: write
   statuses: read
   checks: read
+  actions: read
 
 jobs:
   lint:
