@@ -2,6 +2,9 @@
 
 PR_NUMBER=$1
 
+# Wait for the PR checks to complete
+gh pr checks $PR_NUMBER --watch --fail-fast
+
 # Fetch the JSON data using 'gh pr view' command
 json_data=$(gh pr view $PR_NUMBER --json statusCheckRollup,mergeable)
 
