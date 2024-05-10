@@ -12,6 +12,7 @@ permissions:
 jobs:
   lint:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
       - name: Use Node.js
@@ -23,6 +24,7 @@ jobs:
       - run: npm run lint
   playwright-tests:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     needs:
       - lint
     steps:
@@ -89,6 +91,7 @@ jobs:
           retention-days: 3
   dependabot-auto-approve-and-merge:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     if: github.actor == 'dependabot[bot]'
     needs:
       - playwright-tests
