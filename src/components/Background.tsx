@@ -16,10 +16,6 @@ const Background = () => {
         await loadFull(engine)
     }, [])
 
-    const particlesLoaded = useCallback(async (container: TsParticleContainer | undefined) => {
-        await console.log(container)
-    }, [])
-
     return <>
         {show && <Particles
             id="tsparticles"
