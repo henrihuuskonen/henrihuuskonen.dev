@@ -30,9 +30,6 @@ const Background = () => {
                 width: "100%"
             }}
             init={particlesInit}
-            loaded={particlesLoaded}
-            // TODO: Fix the types
-            // @ts-ignore
             options={AVATAR_OPTIONS}
         />}
     </>
