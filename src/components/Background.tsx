@@ -16,10 +16,6 @@ const Background = () => {
         await loadFull(engine)
     }, [])
 
-    const particlesLoaded = useCallback(async (container: TsParticleContainer | undefined) => {
-        await console.log(container)
-    }, [])
-
     return <>
         {show && <Particles
             id="tsparticles"
@@ -34,9 +30,6 @@ const Background = () => {
                 width: "100%"
             }}
             init={particlesInit}
-            loaded={particlesLoaded}
-            // TODO: Fix the types
-            // @ts-ignore
             options={AVATAR_OPTIONS}
         />}
     </>
