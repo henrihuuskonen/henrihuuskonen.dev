@@ -1,11 +1,7 @@
-import {BACKGROUND_Z_INDEX} from "@/constants"
-import {IOptions, RecursivePartial} from "tsparticles-engine"
+import type {ISourceOptions} from "@tsparticles/engine"
 
-export const AVATAR_OPTIONS: RecursivePartial<IOptions> = {
+export const AVATAR_OPTIONS: ISourceOptions = {
     "autoPlay": true,
-    "style": {
-        "zIndex": BACKGROUND_Z_INDEX,
-    },
     "background": {
         "color": {
             "value": "#0d47a1"
@@ -277,7 +273,6 @@ export const AVATAR_OPTIONS: RecursivePartial<IOptions> = {
                 "width": 1920,
                 "height": 1080
             },
-            "limit": 0,
             "value": 100
         },
         "opacity": {
