@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from "react"
-import {loadFull} from "tsparticles"
 import {AVATAR_OPTIONS} from "@/components/avatar-options"
 import {initParticlesEngine, Particles} from "@tsparticles/react"
 import styles from "@/styles/styles.module.css"
+import {loadFull} from "tsparticles"
 
 const Background = () => {
     const [show, setShow] = useState(false)
