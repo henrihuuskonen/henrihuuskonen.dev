@@ -12,7 +12,6 @@ const Hero = () => {
                     src="/henri-huuskonen-avatar.svg"
                     fill
                     alt="Picture of the author"
-                    priority={true}
                 />
             </div>
         </div>
