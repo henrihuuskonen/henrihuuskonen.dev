@@ -10,3 +10,8 @@ export interface SensorData {
     humidity: number;
     timestamp: string;
 }
+
+export interface SensorConfig {
+    sensorId: string
+    sensorData: SensorData[]
+}

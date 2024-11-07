@@ -3,17 +3,12 @@ import React from "react"
 import 'rc-slider/assets/index.css'
 import {getDateFormatted} from "@/lib/dateHelper"
 import Layout from "@/components/Layout"
-import {RawSensorData, SensorData} from "@/types"
+import {RawSensorData, SensorConfig, SensorData} from "@/types"
 import Graph from "@/components/Graph"
+import apiClient from "@/lib/apiClient"
 
 
-const epochToTime = (epoch: number): string => {
-    const date = new Date(epoch) // Multiply by 1000 if the epoch is in seconds, omit if it's in milliseconds
-    const hours = date.getHours().toString().padStart(2, '0')
-    const minutes = date.getMinutes().toString().padStart(2, '0')
 
-    return `${hours}:${minutes}`
-}
 
 const Home = ({
                   data
@@ -35,11 +30,6 @@ const Home = ({
     )
 }
 
-interface SensorConfig {
-    sensorId: string
-    sensorData: SensorData[]
-}
-
 interface PageProps {
     data: SensorConfig[];
 }
@@ -54,32 +44,13 @@ export const getServerSideProps: GetServerSideProps<PageProps> = async (context:
 
     const today = new Date()
     const dateQuery = getDateFormatted(today)
-    const response = await fetch(`https://api.henrihuuskonen.dev/api/fetch_data?date=${dateQuery}&sensor=${sensors[1]}`)
-    if (response.status !== 200) {
-        return {
-            props: {
-                data: []
-            },
-        }
-    }
 
-    const rawData: RawSensorData[] = await response.json()
-
-    const mappedData: SensorConfig | undefined = rawData.length ? {
-        sensorId: rawData[0].s,
-        sensorData: rawData.map((d: RawSensorData) => {
-            return {
-                temperature: d.t,
-                humidity: d.h,
-                timestamp: epochToTime(d.ts)
-            }
-        })
-    } : undefined
-
+    const promises = sensors.map(sensorId => apiClient.fetchSensorData(dateQuery, sensorId))
+    const sensorDatas = await Promise.all(promises)
 
     return {
         props: {
-            data: mappedData ? [mappedData] : []
+            data: sensorDatas.filter((data): data is SensorConfig => data != undefined)
         },
     }
 }
