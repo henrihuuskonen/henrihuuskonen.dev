@@ -6,6 +6,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "lint:fix": "next lint --fix",
     "prepare": "husky install",
     "postbuild": "next-sitemap",
     "test": "playwright test --grep-invert @ci",
