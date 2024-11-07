@@ -1,6 +1,6 @@
 import React from "react"
 import Head from "next/head"
-import styles from "../styles/styles.module.css"
+import styles from "./styles.module.css"
 import Hero from "@/components/Avatar"
 import InlineMenu from "@/components/InlineMenu"
 import Background from "@/components/Background"
