@@ -32,6 +32,7 @@ const App = ({Component, pageProps}: AppProps) => {
                 href="https://henrihuuskonen.dev/"
                 key="canonical"
             />
+            <meta name="viewport" content="width=device-width, initial-scale=1"/>
         </Head>
         <Component {...pageProps} />
         <Analytics/>

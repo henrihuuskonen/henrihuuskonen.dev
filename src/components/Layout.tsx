@@ -1,8 +1,8 @@
-import {ReactElement} from "react"
-import styles from "../styles/styles.module.css"
+import {JSXElementConstructor, ReactElement, ReactNode} from "react"
+import styles from "../pages/styles.module.css"
 
 interface LayoutProps {
-    children: ReactElement | ReactElement[]
+    children: ReactNode
 
 }
 
