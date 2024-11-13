@@ -29,8 +29,8 @@ const Sensors = ({
 
 
     const FloorPlan = () => {
-        const materials = useLoader(MTLLoader, '/floorplan/home.mtl')
-        const obj = useLoader(OBJLoader, '/floorplan/home.obj', (loader) => {
+        const materials = useLoader(MTLLoader, '/floorplan/floorplan-v2.mtl')
+        const obj = useLoader(OBJLoader, '/floorplan/floorplan-v2.obj', (loader) => {
             materials.preload()
             loader.setMaterials(materials)
         })
@@ -66,7 +66,7 @@ const Sensors = ({
                         up: [0, 1, 0], // Standard Y-axis up direction
                         rotation: [Math.PI / 2, 0, 0] // Rotate the camera to face downward
                     }}>
-                        <ambientLight intensity={0.4}/>
+                        <ambientLight intensity={0.1} position={[0, 5, 0]}/>
                         <Lights
                             livingRoomLight={livingRoomLight}
                             kitchenLight={kitchenLight}
