@@ -6,3 +6,58 @@
     padding: 1rem;
     height: 200px;
 }
+
+.canvas__container {
+    width: 400px;
+    height: 900px;
+    margin: auto;
+    position: relative;
+}
+
+.canvas {
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.canvas__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+}
+
+.info_circle {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    color: black;
+    border-radius: 50%;
+    border: 1px solid green;
+    align-content: center;
+}
+
+.info_circle:hover {
+    background-color: green;
+    cursor: pointer;
+}
+
+.info_circle__text {
+    font-size: 12px;
+    margin: 0;
+    text-align: center;
+    pointer-events: none;
+}
+
+.info_circle__temperature {
+    composes: info_circle__text;
+    color: red;
+}
+
+.info_circle__humidity {
+    composes: info_circle__text;
+    color: blue;
+}
