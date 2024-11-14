@@ -33,20 +33,21 @@
     position: absolute;
     width: 50px;
     height: 50px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 50%);
     color: black;
     border-radius: 50%;
-    border: 1px solid green;
+    border: 1px solid black;
     align-content: center;
 }
 
 .info_circle:hover {
-    background-color: green;
+    background-color: rgba(255, 255, 255, 80%);
     cursor: pointer;
 }
 
 .info_circle__text {
     font-size: 12px;
+    font-weight: 600;
     margin: 0;
     text-align: center;
     pointer-events: none;
@@ -60,4 +61,20 @@
 .info_circle__humidity {
     composes: info_circle__text;
     color: blue;
+}
+
+.modal__container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #131313;
+    padding: 1rem;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+.modal__content {
+
 }
