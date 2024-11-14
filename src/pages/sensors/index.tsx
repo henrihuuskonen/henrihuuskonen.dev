@@ -1,31 +1,84 @@
 import {GetServerSideProps, GetServerSidePropsContext, InferGetServerSidePropsType} from "next"
-import React from "react"
+import React, {Suspense, useEffect, useState} from "react"
 import 'rc-slider/assets/index.css'
 import {getDateFormatted} from "@/lib/dateHelper"
 import Layout from "@/components/Layout"
-import {RawSensorData, SensorConfig, SensorData} from "@/types"
-import Graph from "@/components/Graph"
+import {SensorConfig} from "@/types"
 import apiClient from "@/lib/apiClient"
+import {Canvas, useLoader} from "@react-three/fiber"
+import {OrbitControls} from "@react-three/drei"
+import {useIsClient} from "@/hooks/isClient"
+import {OBJLoader} from 'three/examples/jsm/loaders/OBJLoader'
+import {MTLLoader} from 'three/examples/jsm/loaders/MTLLoader'
+import Lights from "@/components/sensors/Lights"
+import styles from "./styles.module.css"
+import InfoCircle from "@/components/sensors/InfoCircle"
+import Modal from "@/components/sensors/Modal"
+
+const Sensors = ({
+                     data
+                 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+    const [isClient] = useIsClient()
+
+    const [showModal, setShowModal] = useState(false)
+    const [currentSensor, setCurrentSensor] = useState<SensorConfig | undefined>(undefined)
 
 
+    const FloorPlan = () => {
+        const materials = useLoader(MTLLoader, '/floorplan/floorplan-v2.mtl')
+        const obj = useLoader(OBJLoader, '/floorplan/floorplan-v2.obj', (loader) => {
+            materials.preload()
+            loader.setMaterials(materials)
+        })
 
+        return <primitive object={obj} scale={[0.01, 0.01, 0.01]}
+                          position={[-8.5, -5, 3]} rotation={[0, Math.PI / 2, 0]}/>
+    }
 
-const Home = ({
-                  data
-              }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+    interface CanvasOverlayProps {
+        sensorConfigs: SensorConfig[];
+    }
 
+    const CanvasOverlay = ({sensorConfigs}: CanvasOverlayProps) => {
+        return (
+            <div className={styles.canvas__overlay}>
+                <InfoCircle sensorId={"dht_11-1"} sensorConfigs={sensorConfigs}
+                            positionX={280} positionY={520}
+                            onClick={(sensorConfig: SensorConfig) => setCurrentSensor(sensorConfig)}/>
+            </div>
+        )
+    }
+
+    useEffect(() => {
+        setShowModal(!!currentSensor)
+    }, [currentSensor])
 
     return (
         <Layout>
-            {data && data.map(sensor => {
-                return (
-                    <div key={sensor.sensorId}>
-                        <p>{sensor.sensorId}</p>
-                        <Graph data={sensor.sensorData}/>
-                    </div>
-                )
-            })}
-
+            {isClient && (
+                <div className={styles.canvas__container}>
+                    <CanvasOverlay sensorConfigs={data}/>
+                    {(showModal && currentSensor) &&
+                        <Modal sensor={currentSensor} onClose={() => setCurrentSensor(undefined)}/>}
+                    <Canvas className={styles.canvas} camera={{
+                        position: [0, 15, 0], // Top-down view from above
+                        fov: 50,
+                        near: 0.1,
+                        far: 1000,
+                        up: [0, 1, 0], // Standard Y-axis up direction
+                        rotation: [Math.PI / 2, 0, 0] // Rotate the camera to face downward
+                    }}>
+                        <ambientLight intensity={0.5}/>
+                        <Lights
+                        />
+                        <Suspense fallback={null}>
+                            <FloorPlan/>
+                        </Suspense>
+                        <OrbitControls enableDamping={false} enablePan={false} enableRotate={false} enableZoom={false}
+                                       target={[0, 0, 0]}/>
+                    </Canvas>
+                </div>
+            )}
         </Layout>
     )
 }
@@ -55,4 +108,4 @@ export const getServerSideProps: GetServerSideProps<PageProps> = async (context:
     }
 }
 
-export default Home
+export default Sensors
