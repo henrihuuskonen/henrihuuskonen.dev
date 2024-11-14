@@ -10,10 +10,10 @@ import {OrbitControls} from "@react-three/drei"
 import {useIsClient} from "@/hooks/isClient"
 import {OBJLoader} from 'three/examples/jsm/loaders/OBJLoader'
 import {MTLLoader} from 'three/examples/jsm/loaders/MTLLoader'
-import Lights from "@/pages/sensors/components/Lights"
+import Lights from "@/components/sensors/Lights"
 import styles from "./styles.module.css"
-import InfoCircle from "@/pages/sensors/components/InfoCircle"
-import Modal from "@/pages/sensors/components/Modal"
+import InfoCircle from "@/components/sensors/InfoCircle"
+import Modal from "@/components/sensors/Modal"
 
 const Sensors = ({
                      data

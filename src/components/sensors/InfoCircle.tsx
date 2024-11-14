@@ -1,5 +1,5 @@
 import React from "react"
-import styles from "../styles.module.css"
+import styles from "../../pages/sensors/styles.module.css"
 import {SensorConfig, SensorData} from "@/types"
 
 interface InfoCircleProps {
