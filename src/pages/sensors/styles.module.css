@@ -9,7 +9,7 @@
 
 .canvas__container {
     width: 400px;
-    height: 900px;
+    height: 800px;
     margin: auto;
     position: relative;
 }
@@ -21,6 +21,7 @@
 }
 
 .canvas__overlay {
+    pointer-events: none;
     position: absolute;
     top: 0;
     left: 0;
@@ -38,6 +39,7 @@
     border-radius: 50%;
     border: 1px solid black;
     align-content: center;
+    pointer-events: auto;
 }
 
 .info_circle:hover {
@@ -69,12 +71,13 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #131313;
-    padding: 1rem;
-    border-radius: 5px;
+    align-content: center;
     z-index: 1000;
 }
 
 .modal__content {
-
+    background-color: #131313;
+    padding: 2rem;
+    border: 1px solid white;
+    border-radius: 20px;
 }
