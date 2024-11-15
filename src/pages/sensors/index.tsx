@@ -5,15 +5,14 @@ import {getDateFormatted} from "@/lib/dateHelper"
 import Layout from "@/components/Layout"
 import {SensorConfig} from "@/types"
 import apiClient from "@/lib/apiClient"
-import {Canvas, useLoader} from "@react-three/fiber"
+import {Canvas} from "@react-three/fiber"
 import {OrbitControls} from "@react-three/drei"
 import {useIsClient} from "@/hooks/isClient"
-import {OBJLoader} from 'three/examples/jsm/loaders/OBJLoader'
-import {MTLLoader} from 'three/examples/jsm/loaders/MTLLoader'
 import Lights from "@/components/sensors/Lights"
 import styles from "./styles.module.css"
-import InfoCircle from "@/components/sensors/InfoCircle"
 import Modal from "@/components/sensors/Modal"
+import CanvasOverlay from "@/components/sensors/CanvasOverlay"
+import FloorPlan from "@/components/sensors/FloorPlan"
 
 const Sensors = ({
                      data
@@ -24,31 +23,6 @@ const Sensors = ({
     const [currentSensor, setCurrentSensor] = useState<SensorConfig | undefined>(undefined)
 
 
-    const FloorPlan = () => {
-        const materials = useLoader(MTLLoader, '/floorplan/floorplan-v2.mtl')
-        const obj = useLoader(OBJLoader, '/floorplan/floorplan-v2.obj', (loader) => {
-            materials.preload()
-            loader.setMaterials(materials)
-        })
-
-        return <primitive object={obj} scale={[0.01, 0.01, 0.01]}
-                          position={[-8.5, -5, 3]} rotation={[0, Math.PI / 2, 0]}/>
-    }
-
-    interface CanvasOverlayProps {
-        sensorConfigs: SensorConfig[];
-    }
-
-    const CanvasOverlay = ({sensorConfigs}: CanvasOverlayProps) => {
-        return (
-            <div className={styles.canvas__overlay}>
-                <InfoCircle sensorId={"dht_11-1"} sensorConfigs={sensorConfigs}
-                            positionX={280} positionY={520}
-                            onClick={(sensorConfig: SensorConfig) => setCurrentSensor(sensorConfig)}/>
-            </div>
-        )
-    }
-
     useEffect(() => {
         setShowModal(!!currentSensor)
     }, [currentSensor])
@@ -57,9 +31,10 @@ const Sensors = ({
         <Layout>
             {isClient && (
                 <div className={styles.canvas__container}>
-                    <CanvasOverlay sensorConfigs={data}/>
+                    <CanvasOverlay sensorConfigs={data} setCurrentSensor={setCurrentSensor}/>
                     {(showModal && currentSensor) &&
-                        <Modal sensor={currentSensor} onClose={() => setCurrentSensor(undefined)}/>}
+                        <Modal sensor={currentSensor} onClose={() => setCurrentSensor(undefined)}/>
+                    }
                     <Canvas className={styles.canvas} camera={{
                         position: [0, 15, 0], // Top-down view from above
                         fov: 50,
@@ -68,7 +43,6 @@ const Sensors = ({
                         up: [0, 1, 0], // Standard Y-axis up direction
                         rotation: [Math.PI / 2, 0, 0] // Rotate the camera to face downward
                     }}>
-                        <ambientLight intensity={0.5}/>
                         <Lights
                         />
                         <Suspense fallback={null}>

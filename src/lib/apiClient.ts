@@ -9,7 +9,7 @@ const fetchSensorData = async (dateQuery: string, sensorId: string): Promise<Sen
 
     const rawData: RawSensorData[] = await response.json()
 
-    const mappedData: SensorConfig | undefined = rawData.length ? {
+    return rawData.length ? {
         sensorId: rawData[0].s,
         sensorData: rawData.map((d: RawSensorData) => {
             return {
@@ -19,8 +19,6 @@ const fetchSensorData = async (dateQuery: string, sensorId: string): Promise<Sen
             }
         })
     } : undefined
-
-    return mappedData
 }
 
 export default {
