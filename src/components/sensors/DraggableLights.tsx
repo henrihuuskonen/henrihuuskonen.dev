@@ -19,7 +19,7 @@ const DraggableLight = () => {
     return (
         <>
                 {/* @ts-ignore TODO: fix me */}
-                <group {...bind()} ref={lightRef}>
+                <group {...bind()} ref={lightRef} position={[0, -4, 0]}>
                     <pointLight intensity={10} color="white"/>
                     <mesh>
                         <sphereGeometry args={[0.2, 32, 32]}/>
