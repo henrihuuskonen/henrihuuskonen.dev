@@ -70,7 +70,7 @@ jobs:
         run: npm run test:ci
 
       - name: Upload Playwright report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: failure() && steps.run-tests.conclusion == 'failure'
         with:
           name: playwright-report
@@ -83,7 +83,7 @@ jobs:
         run: npm run test:update-snapshots
 
       - name: Upload updated Playwright screenshots
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: failure() && steps.run-tests-update.conclusion == 'success'
         with:
           name: playwright-screenshots-updated
