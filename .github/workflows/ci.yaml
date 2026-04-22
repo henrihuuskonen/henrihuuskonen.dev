@@ -23,7 +23,7 @@ jobs:
       - run: npm ci
       - run: npm run lint
   playwright-tests:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     timeout-minutes: 5
     needs:
       - lint
