@@ -1,3 +1,45 @@
-export const TEXT_SECTION_TINKERER = `I've always had a fascination with how things, including websites and electronics, operate. My hobby of fixing mobile devices in my free time while attending school helped me land a job as a mobile technician. After that, I found myself working for a start-up in a more factory-like environment with countless automation opportunities. I eventually came up with a number of software tools for automation that minimise human error and boost throughput. That helped me land a position on the engineering team of the company, and the rest is history. I still enjoy creating things with my hands now, outside of work, and I've been working on small IoT projects and fixing an old sailboat.`
-export const TEXT_SECTION_SOFTWARE_DEVELOPER = `Experienced Senior Software Engineer with a knack for optimizing business operations through efficient software solutions. Over 5 years as a Software Engineer, I've built integrations to logistics providers, developed customer portals, and streamlined internal processes. Proficient in a diverse tech stack including React, NodeJS, Typescript, and Python, I thrive on tackling complex challenges and iterating on user experiences by making data-driven decisions through A/B testing. With a background in small electronics repair and customer service, I bring hands-on experience and a practical approach to software development.`
+export const TEXT_SECTION_TINKERER = [
+    `I've always been fascinated by how things work — websites, electronics, all of it. Fixing mobile devices in my spare time during school turned into a job as a mobile technician.`,
+    `From there I joined a start-up in a factory-like setting full of automation opportunities. I built software tools that cut human error and boosted throughput — which earned me a spot on the engineering team. The rest is history.`,
+    `Outside of work I still like making things with my hands: small IoT projects, and slowly restoring an old sailboat.`,
+]
+export const TEXT_SECTION_SOFTWARE_DEVELOPER = [
+    `Senior Software Engineer with a knack for optimizing business operations through efficient software. Over 5+ years I've built a bit of everything — customer-facing products, third-party integrations, and internal tooling — across the full stack.`,
+    `I work across a broad stack — React, Node.js, TypeScript, and Python — and enjoy untangling complex problems, shaping user experiences with data and A/B testing rather than guesswork.`,
+    `A background in small-electronics repair and customer service keeps me hands-on and practical about the software I build.`,
+]
 export const META_DESCRIPTION = `Experienced Senior Software Engineer from Helsinki, Finland adept at optimizing business operations with React, NodeJS, Python.`
+
+export const NAME = `Henri Huuskonen`
+export const ROLE = `Senior Software Engineer`
+export const LOCATION = `Helsinki, Finland`
+
+export const SKILLS = [
+    "typescript",
+    "react",
+    "next.js",
+    "node.js",
+    "python",
+    "a/b-testing",
+    "integrations",
+    "automation",
+    "iot",
+]
+
+export const CONTACT_LINKS = [
+    {
+        label: "LinkedIn",
+        href: "https://www.linkedin.com/in/henri-huuskonen-34850853/details/experience/",
+        handle: "in/henri-huuskonen",
+    },
+    {
+        label: "GitHub",
+        href: "https://github.com/henrihuuskonen",
+        handle: "@henrihuuskonen",
+    },
+    {
+        label: "Email",
+        href: "mailto:mail@henrihuuskonen.dev",
+        handle: "mail@henrihuuskonen.dev",
+    },
+]

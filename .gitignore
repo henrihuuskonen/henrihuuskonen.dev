@@ -38,5 +38,6 @@ next-env.d.ts
 .idea
 
 playwright-report/
+test-results/
 public/sitemap-0.xml
 public/sitemap.xml
