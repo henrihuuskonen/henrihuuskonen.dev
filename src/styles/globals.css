@@ -1,15 +1,37 @@
 body {
     font-family: "Space Mono", monospace;
     margin: 0;
-    background-color: #131313;
+    background-color: var(--term-page-bg);
+    color: var(--term-fg);
+    -webkit-font-smoothing: antialiased;
 }
 
 a {
     text-decoration: none;
+    color: inherit;
 }
 
 button {
     background-color: transparent;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Accessible visually-hidden helper (kept in the a11y tree) */
+.srOnly {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
 
 :root {
@@ -35,4 +57,19 @@ button {
     /*  Transition speeds */
     --transition-speed: .3s;
     --transition-speed-slow: 1s;
+
+    /* Terminal theme palette (Snazzy-inspired, high contrast on dark) */
+    --term-page-bg: #0b0c10;
+    --term-bg: #21222c;
+    --term-titlebar: #191a21;
+    --term-border: #3a3d4d;
+    --term-fg: #f8f8f2;
+    --term-muted: #9aa7de;
+    --term-green: #5af78e;
+    --term-cyan: #57c7ff;
+    --term-pink: #ff6ac1;
+    --term-purple: #c792ea;
+    --term-yellow: #f3f99d;
+    --term-orange: #ffb86c;
+    --term-red: #ff5c57;
 }
